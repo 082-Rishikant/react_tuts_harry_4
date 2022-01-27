@@ -1,6 +1,9 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 function Navbar() {
+  // Reading state using store those are exported from store itself
+  const amount=useSelector(state=>state.amount);
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -21,7 +24,7 @@ function Navbar() {
                 <a className="nav-link" href="/about">About</a>
               </li>
             </ul>
-            <button className="btn-primary" disabled={true}>Your Balance=1000</button>
+            <button className="btn-primary" disabled={true}>Your Balance={amount}</button>
           </div>
         </div>
       </nav>
